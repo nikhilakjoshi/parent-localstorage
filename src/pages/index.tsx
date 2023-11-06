@@ -9,7 +9,7 @@ const font = Rubik({
 
 export default function Home() {
   const iframeRef = useRef<HTMLIFrameElement>(null);
-  const triggerPostMessage = useCallback(async (token: string) => {
+  const triggerPostMessage = useCallback((token: string) => {
     iframeRef.current?.contentWindow?.postMessage(
       JSON.stringify({ token }),
       "https://child-localstorage.vercel.app",
